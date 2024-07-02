@@ -220,18 +220,12 @@ public class PassengerInfoPage {
 		}
 	}
 
+	public void clickNext() {
+		btn_Next.click();
+	}
+
 	public void clickContinue() {
-		try {
-			//Thread.sleep(2000);
-			if (btn_Next.isEnabled()) {
-				btn_Next.click();
-			} else {
-				js.executeScript("arguments[0].scrollIntoViewIfNeeded();", btn_Continue);
-				btn_Continue.click();
-			}
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		btn_Continue.click();
 	}
 
 	// Performing actions on web elements for filling details in Passenger

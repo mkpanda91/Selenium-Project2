@@ -109,18 +109,17 @@ public class SignUpPage {
 	}
 
 	public void setEmail(String emailAddr) {
-		wait.until(ExpectedConditions.elementToBeClickable(field_email));
 		field_email.sendKeys(emailAddr);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+		field_email.sendKeys(Keys.TAB);
 	}
 
 	public void setPassword(String pword) {
-		wait.until(ExpectedConditions.elementToBeClickable(field_password));
 		field_password.sendKeys(pword);
 		field_password.sendKeys(Keys.TAB);
 	}
 
 	public void setConfirmPassword(String cpword) {
-		wait.until(ExpectedConditions.elementToBeClickable(field_cpassword));
 		field_cpassword.sendKeys(cpword);
 	}
 
@@ -128,15 +127,11 @@ public class SignUpPage {
 		js.executeScript("arguments[0].scrollIntoView();", chk_Box);
 		js.executeScript("arguments[0].click();", chk_Box);
 		btn_Submit.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//wait.until(ExpectedConditions.visibilityOf(signUpVerifyElement));
 	}
 
 	public String getPostSignUpVerification() {
-		try {
-			wait.until(ExpectedConditions.visibilityOf(signUpVerifyElement));
-		} catch (Exception e) {
-			System.out.println("OTP popup is not displayed");
-			return null ;
-		}
 		return (signUpVerifyElement.getText());
 	}
 }

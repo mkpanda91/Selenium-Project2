@@ -79,12 +79,12 @@ public class TC_006_TestRoundTripBooking extends BaseDriverClass {
 			pi_pgObj.setPaxFirstName(p.getProperty("AdPax1_fname"));
 			pi_pgObj.setPaxLastName(p.getProperty("AdPax1_lname"));
 			pi_pgObj.setPaxMobileNumber(p.getProperty("AdPax1_mobnum"));
-			pi_pgObj.clickContinue();
+			pi_pgObj.clickNext();
 			// Filling the Child Passenger information
 			pi_pgObj.selectPaxTitle(p.getProperty("ChPax1_title"), p.getProperty("Pax_category2"));
 			pi_pgObj.setPaxFirstName(p.getProperty("ChPax1_fname"));
 			pi_pgObj.setPaxLastName(p.getProperty("ChPax1_lname"));
-			pi_pgObj.clickContinue();
+			pi_pgObj.clickNext();
 			// Filling the Infant Passenger information
 			pi_pgObj.selectInfantTitle(p.getProperty("InfPax1_title"), p.getProperty("Pax_category3"));
 			pi_pgObj.setInfantFirstName(p.getProperty("InfPax1_fname"));
